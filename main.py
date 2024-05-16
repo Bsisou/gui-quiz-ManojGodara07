@@ -30,3 +30,4 @@ button1_canvas = canvas1.create_window( 1550, 820, anchor = "nw",
 
 # Execute tkinter 
 root.mainloop() 
+print("test")
