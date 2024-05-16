@@ -1,12 +1,32 @@
-import tkinter as tk
+# Import module 
+from tkinter import *
 
-window = tk.Tk()
-window.title("Hello world")
-window.geometry("300x300")
+# Create object 
+root = Tk() 
 
-hello = tk.Label(text="Hello world!")
-hello.pack()
-button = tk.Button(text="Click me!")
-button.pack()
+# Adjust size 
+root.geometry("1920x1080") 
 
-tk.mainloop()
+# Add image file 
+bg = PhotoImage(file = "Background.png") 
+
+# Create Canvas 
+canvas1 = Canvas( root, width = 1920, 
+        height = 1080) 
+
+canvas1.pack(fill = "both", expand = True) 
+
+# Display image 
+canvas1.create_image( 0, 0, image = bg, 
+          anchor = "nw") 
+
+
+# Create Buttons 
+button1 = Button( root, text = "Start", height=3, width=8, bg="white", fg="black", font=("Helvetica", 20)) 
+
+# Display Buttons 
+button1_canvas = canvas1.create_window( 1550, 820, anchor = "nw", 
+                  window = button1) 
+
+# Execute tkinter 
+root.mainloop() 
